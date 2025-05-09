@@ -1,0 +1,108 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --pink-primary: #d67888;
+  --bege-secondary: #fdeadc;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: #fdeadc;
+  color: #d67888;
+  font-family: "Poppins", sans-serif;
+}
+
+@layer base {
+  body {
+    @apply bg-bege text-rosa;
+  }
+}
+
+@layer components {
+  .container {
+    @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
+  }
+
+  .btn-primary {
+    @apply px-6 py-3 bg-rosa text-white rounded-full font-medium 
+         transition-all duration-300 inline-flex items-center justify-center;
+  }
+
+  .btn-outline {
+    @apply px-6 py-3 border-2 border-rosa text-rosa rounded-full 
+         hover:bg-rosa hover:text-white transition-all duration-300 inline-flex items-center justify-center;
+  }
+
+  .card {
+    @apply bg-white p-6 sm:p-8 rounded-lg shadow-subtle;
+  }
+
+  .section-title {
+    @apply text-3xl md:text-4xl font-bold text-rosa mb-4;
+  }
+
+  .section-divider {
+    @apply w-20 h-1 bg-rosa mx-auto mb-8;
+  }
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: #fdeadc;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--pink-primary);
+  border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #c06777;
+}
+
+/* Melhorias para responsividade */
+@media (max-width: 640px) {
+  .section-title {
+    @apply text-2xl;
+  }
+
+  .card {
+    @apply p-4;
+  }
+}
+
+/* Melhorias para acessibilidade */
+:focus {
+  outline: 2px solid var(--pink-primary);
+  outline-offset: 2px;
+}
+
+/* Garantir que os botões tenham área de clique suficiente */
+button,
+a[role="button"],
+.btn-primary,
+.btn-outline {
+  min-height: 44px;
+}
+
+/* Melhorar legibilidade em telas pequenas */
+@media (max-width: 480px) {
+  body {
+    font-size: 16px;
+  }
+
+  h1,
+  h2,
+  h3 {
+    word-break: break-word;
+  }
+}
